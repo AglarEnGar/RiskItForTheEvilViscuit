@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d0gi8q5fb3k5j"]
+
+[ext_resource type="Shader" uid="uid://bn15uno2bssml" path="res://Stages/Ass_Dimension.gdshader" id="1_b1r8v"]
+
+[resource]
+shader = ExtResource("1_b1r8v")
+shader_parameter/glitch_amount = 0.1
+shader_parameter/glitch_speed = 0.4

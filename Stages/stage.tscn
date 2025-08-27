@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bb1mqf85aqcjq"]
+[gd_scene load_steps=16 format=3 uid="uid://bb1mqf85aqcjq"]
 
 [ext_resource type="PackedScene" uid="uid://be6gfumwn02ds" path="res://Character/CatTest.tscn" id="1_0vd8q"]
 [ext_resource type="Texture2D" uid="uid://bf7vukgrioqv1" path="res://Art/Tilesets/Grass.png" id="2_jk5fo"]
+[ext_resource type="Script" uid="uid://d04tocfy6exft" path="res://Stages/ass_dimension.gd" id="3_us17p"]
+[ext_resource type="Material" uid="uid://d0gi8q5fb3k5j" path="res://Shaderz/Ass_Dimension.tres" id="3_x67j2"]
 [ext_resource type="Texture2D" uid="uid://tdfptiud6ro5" path="res://Art/Tilesets/Hills.png" id="3_xv46f"]
 [ext_resource type="Texture2D" uid="uid://dmq8fydotn8m5" path="res://Art/Tilesets/Tilled_Dirt.png" id="4_6sab1"]
 [ext_resource type="Texture2D" uid="uid://b6ke10d0r6v8g" path="res://Art/Tilesets/Wooden House.png" id="5_vmgn7"]
@@ -315,8 +317,33 @@ sources/4 = SubResource("TileSetAtlasSource_wi5g2")
 
 [node name="Stage" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(-2, 2)
 metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(109, 114)
+scale = Vector2(5.76, 5.76)
+
+[node name="Bed" parent="." instance=ExtResource("7_sfx53")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = ExtResource("3_x67j2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_us17p")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 5.99999
+offset_right = 203.0
+offset_bottom = 37.0
+toggle_mode = true
+text = "Enter the ass dimension"
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_0vd8q")]
 position = Vector2(109, 114)
@@ -344,8 +371,12 @@ layer_4/name = "roof"
 layer_4/z_index = -1
 layer_4/tile_data = PackedInt32Array(1179679, 262147, 2, 1179680, 327683, 2, 1179681, 327683, 2, 1179682, 327683, 2, 1179683, 327683, 2, 1179684, 327683, 2, 1179685, 327683, 2, 1179686, 327683, 2, 1179687, 327683, 2, 1179688, 393219, 2, 1245216, 327683, 3, 1245217, 327683, 3, 1245218, 327683, 3, 1245219, 327683, 3, 1245220, 327683, 3, 1245221, 327683, 3, 1245222, 327683, 3, 1245223, 327683, 3, 1245224, 393219, 3, 1245215, 262147, 3, 1310751, 262147, 3, 1310760, 393219, 3, 1376296, 393219, 4, 1376295, 327683, 4, 1376294, 327683, 4, 1376293, 327683, 4, 1376292, 327683, 4, 1376291, 327683, 4, 1376290, 327683, 4, 1376289, 327683, 4, 1376288, 327683, 4, 1376287, 262147, 4, 1310752, 327683, 3, 1310753, 327683, 3, 1310754, 327683, 3, 1310755, 327683, 3, 1310756, 327683, 3, 1310757, 327683, 3, 1310758, 327683, 3, 1310759, 327683, 3, 1114152, 393219, 1, 983080, 393219, 0, 1048616, 393219, 1, 983079, 327683, 0, 983078, 327683, 0, 983077, 327683, 0, 983076, 327683, 0, 983075, 327683, 0, 983074, 327683, 0, 983073, 327683, 0, 983072, 327683, 0, 983071, 262147, 0, 1048608, 327683, 1, 1048609, 327683, 1, 1048610, 327683, 1, 1048611, 327683, 1, 1048612, 327683, 1, 1048613, 327683, 1, 1048614, 327683, 1, 1048615, 327683, 1, 1114151, 327683, 1, 1114150, 327683, 1, 1114149, 327683, 1, 1114148, 327683, 1, 1114147, 327683, 1, 1114146, 327683, 1, 1114145, 327683, 1, 1114144, 327683, 1, 1048607, 262147, 1, 1114143, 262147, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(109, 114)
-scale = Vector2(5.76, 5.76)
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+material = ExtResource("3_x67j2")
+copy_mode = 2
 
-[node name="Bed" parent="." instance=ExtResource("7_sfx53")]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[connection signal="toggled" from="CanvasLayer/Button" to="CanvasLayer/ColorRect" method="_on_button_toggled"]
