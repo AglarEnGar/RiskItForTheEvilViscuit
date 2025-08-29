@@ -320,7 +320,6 @@ metadata/_edit_lock_ = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_0vd8q")]
 position = Vector2(109, 114)
-scale = Vector2(5.76, 5.76)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")
@@ -346,6 +345,5 @@ layer_4/tile_data = PackedInt32Array(1179679, 262147, 2, 1179680, 327683, 2, 117
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(109, 114)
-scale = Vector2(5.76, 5.76)
 
 [node name="Bed" parent="." instance=ExtResource("7_sfx53")]
