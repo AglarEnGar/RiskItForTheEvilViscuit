@@ -229,14 +229,15 @@ move_speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.375, 4.625)
-scale = Vector2(0.307291, 0.317708)
+scale = Vector2(1.13998, 1.15292)
 texture = ExtResource("1_2s457")
 hframes = 4
 vframes = 4
-frame = 1
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.5, 5.5)
+scale = Vector2(3.70977, 3.62888)
 shape = SubResource("RectangleShape2D_q5hof")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -249,3 +250,5 @@ parameters/walk/blend_position = Vector2(-0.00729924, -0.157143)
 libraries = {
 &"": SubResource("AnimationLibrary_8pmat")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]

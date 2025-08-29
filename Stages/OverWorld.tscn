@@ -1,8 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bb1mqf85aqcjq"]
+[gd_scene load_steps=12 format=3 uid="uid://bb1mqf85aqcjq"]
 
 [ext_resource type="Material" uid="uid://d0gi8q5fb3k5j" path="res://Shaderz/Ass_Dimension.tres" id="2_rpeeu"]
-[ext_resource type="Script" uid="uid://d04tocfy6exft" path="res://Stages/ass_dimension.gd" id="3_lbnib"]
-[ext_resource type="PackedScene" uid="uid://be6gfumwn02ds" path="res://Character/CatTest.tscn" id="4_0rbah"]
 [ext_resource type="Texture2D" uid="uid://bf7vukgrioqv1" path="res://Art/Tilesets/Grass.png" id="5_7ovpu"]
 [ext_resource type="Texture2D" uid="uid://tdfptiud6ro5" path="res://Art/Tilesets/Hills.png" id="6_hxtqr"]
 [ext_resource type="Texture2D" uid="uid://dmq8fydotn8m5" path="res://Art/Tilesets/Tilled_Dirt.png" id="7_wqhft"]
@@ -274,38 +272,6 @@ cache/0/16/0/scale = 1.0
 
 [node name="Stage" type="Node2D"]
 y_sort_enabled = true
-metadata/_edit_lock_ = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(109, 114)
-scale = Vector2(5.76, 5.76)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = ExtResource("2_rpeeu")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_lbnib")
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 3.0
-offset_top = 5.99999
-offset_right = 203.0
-offset_bottom = 37.0
-toggle_mode = true
-text = "Enter the ass dimension"
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_0rbah")]
-position = Vector2(109, 114)
-scale = Vector2(5.76, 5.76)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
-remote_path = NodePath("../../Camera2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8tl13")
@@ -330,10 +296,6 @@ layer_4/tile_data = PackedInt32Array(1179679, 262147, 2, 1179680, 327683, 2, 117
 material = ExtResource("2_rpeeu")
 copy_mode = 2
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = 2
-follow_viewport_enabled = true
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 411.0
 offset_top = 23.0
@@ -344,5 +306,3 @@ theme_override_fonts/bold_italics_font = SubResource("FontFile_n1sio")
 theme_override_font_sizes/normal_font_size = 18
 text = "COME HERE!
 "
-
-[connection signal="toggled" from="CanvasLayer/Button" to="CanvasLayer/ColorRect" method="_on_button_toggled"]

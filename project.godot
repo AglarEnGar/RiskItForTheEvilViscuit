@@ -15,6 +15,12 @@ run/main_scene="uid://bb1mqf85aqcjq"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AssDimension="*res://Stages/ass_dimension.gd"
+CatTest="*res://Character/CatTest.tscn"
+EvilDimension="*res://Stages/EvilDimension.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"

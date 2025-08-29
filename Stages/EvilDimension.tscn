@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://rjp2uvmwc0g0"]
+
+[ext_resource type="Material" uid="uid://d0gi8q5fb3k5j" path="res://Shaderz/Ass_Dimension.tres" id="1_y5dwe"]
+[ext_resource type="Script" uid="uid://d04tocfy6exft" path="res://Stages/ass_dimension.gd" id="2_fsrnu"]
+
+[node name="EvilDimension" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 11.655
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = ExtResource("1_y5dwe")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_fsrnu")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 5.99999
+offset_right = 203.0
+offset_bottom = 37.0
+toggle_mode = true
+text = "Enter the ass dimension"
+
+[connection signal="toggled" from="CanvasLayer/Button" to="CanvasLayer/ColorRect" method="_on_button_toggled"]

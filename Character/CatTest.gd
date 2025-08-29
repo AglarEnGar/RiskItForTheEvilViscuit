@@ -18,6 +18,8 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	pick_new_state()
+	
+	
 
 func update_animation_parameters(move_input : Vector2):
 	if(move_input != Vector2.ZERO):
