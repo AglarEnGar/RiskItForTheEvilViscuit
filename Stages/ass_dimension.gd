@@ -12,6 +12,7 @@ func _on_button_toggled(toggled_on):
 		
 		button.text = "Leave the ass dimension"
 		
+		
 	else:
 		var next_sc = "res://Stages/OverWorld.tscn"
 		
