@@ -4,7 +4,7 @@ extends ColorRect
 
 func _on_button_toggled(toggled_on):
 	if toggled_on:
-		var next_sc = "res://Stages/UnderWorld.tscn"
+		var next_sc = "res://Stages/UnderLevel.tscn"
 		
 		button.text = "Leave the ass dimension"
 		get_tree().change_scene_to_file(next_sc)
@@ -14,7 +14,7 @@ func _on_button_toggled(toggled_on):
 		
 		
 	else:
-		var next_sc = "res://Stages/OverWorld.tscn"
+		var next_sc = "res://Stages/OverLevel.tscn"
 		
 		button.text = "Enter the ass dimension"
 		get_tree().change_scene_to_file(next_sc)

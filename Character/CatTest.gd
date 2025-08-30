@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var move_speed :float = 150
+@export var move_speed :float = 0
 @export var startng_direction : Vector2 = Vector2(0, 1)
 
 @onready var animation_tree = $AnimationTree

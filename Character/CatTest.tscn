@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bwjpwqj1m6cdu" path="res://Character/CatTest.gd" id="1_qeyfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5hof"]
-size = Vector2(3, 3)
+size = Vector2(9.44032, 9.33333)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7t1ae"]
 animation = &"idlefront"
@@ -229,15 +229,14 @@ move_speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.375, 4.625)
-scale = Vector2(1.13998, 1.15292)
+scale = Vector2(3.883, 3.62)
 texture = ExtResource("1_2s457")
 hframes = 4
 vframes = 4
-frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 5.5)
-scale = Vector2(3.70977, 3.62888)
+position = Vector2(-5, 8)
+scale = Vector2(3.883, 3.62)
 shape = SubResource("RectangleShape2D_q5hof")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -252,3 +251,4 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.475, 0.475)
