@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://dddai0mlo01sw"]
 
-[ext_resource type="Texture2D" uid="uid://btf7tlr3lasyg" path="res://Art/Objects/Basic_Furniture.png" id="1_bgsgb"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rk8ki"]
+load_path = "res://.godot/imported/Basic_Furniture.png-e9a3156b2cb8248b8162a2a429f183f9.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4muv"]
 size = Vector2(14, 17)
 
 [node name="FurnitureEx" type="Sprite2D"]
 position = Vector2(535, 569)
-texture = ExtResource("1_bgsgb")
+texture = SubResource("CompressedTexture2D_rk8ki")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 32)
 
