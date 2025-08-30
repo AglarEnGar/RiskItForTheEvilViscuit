@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://rjp2uvmwc0g0"]
+[gd_scene load_steps=3 format=3 uid="uid://bk8y5ppin4qfv"]
 
 [ext_resource type="Material" uid="uid://d0gi8q5fb3k5j" path="res://Shaderz/Ass_Dimension.tres" id="1_y5dwe"]
-[ext_resource type="Script" uid="uid://d04tocfy6exft" path="res://Stages/ass_dimension.gd" id="2_fsrnu"]
+[ext_resource type="Script" path="res://Stages/ass_dimension.gd" id="2_fsrnu"]
 
 [node name="EvilDimension" type="Node"]
 
