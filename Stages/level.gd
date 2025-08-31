@@ -9,16 +9,26 @@ func _ready():
 
 func show_level(lvl: Node2D):
 	lvl.show()
+	# IDFK which of these controls the acutal collisions
+	# SO FUCK IT LETS JUST MESS WITH ALL OF THEM HAHSAHDHAH
 	var walls = lvl.get_node("WallTiles")
+	var floors = lvl.get_node("FloorTiles")
+	var terrain = lvl.get_node("Terrain")
 	
-	walls.set_deferred("collision_enabled", true)
+	walls.collision_enabled = true
+	floors.collision_enabled = true
+	terrain.collision_enabled = true
 	lvl.process_mode = Node.PROCESS_MODE_INHERIT
 
 func hide_level(lvl: Node2D):
 	lvl.hide()
 	var walls = lvl.get_node("WallTiles")
+	var floors = lvl.get_node("FloorTiles")
+	var terrain = lvl.get_node("Terrain")
 	
-	walls.set_deferred("collision_enabled", false)
+	walls.collision_enabled = false
+	floors.collision_enabled = false
+	terrain.collision_enabled = false
 	lvl.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_player_crouch_end():
