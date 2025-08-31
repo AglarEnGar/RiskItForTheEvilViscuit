@@ -19,7 +19,8 @@ func _ready():
 	crouchTime.timeout.connect(_on_timer_timeout)
 	crouchTime.start(ttd)
 	crouchTime.paused = true
-	initial_position = global_position
+	initial_position = Vector2(15170.5, 257.996)
+	global_position = Vector2(15100.5, 257.996)
 	
 	
 func _on_timer_timeout():
@@ -78,4 +79,9 @@ func pick_new_state():
 		
 func go_home():
 	global_position = initial_position
+	
+func collect_item(item):
+	# Handle what happens when player collects an item
+	print("Player collected: ", item.item_name)
+	# You might want to update score, inventory, etc.
 	

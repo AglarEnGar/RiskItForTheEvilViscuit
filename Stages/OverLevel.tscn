@@ -83,7 +83,7 @@ vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-0.000976562, -3.05176e-05)
-scale = Vector2(1, 1)
+scale = Vector2(0.999, 1.027)
 script = ExtResource("5_1r87x")
 
 [node name="Biscuit" type="Sprite2D" parent="Area2D" groups=["biscuit"]]
@@ -93,7 +93,7 @@ scale = Vector2(0.252079, 0.231517)
 texture = ExtResource("4_shwjo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(15175.5, 257.996)
+position = Vector2(15175, 256)
 rotation = -1.56958
 scale = Vector2(3.78117, 4.96223)
 shape = SubResource("RectangleShape2D_1r87x")
