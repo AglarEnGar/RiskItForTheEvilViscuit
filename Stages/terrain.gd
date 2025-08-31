@@ -3,16 +3,18 @@ extends Area2D
 @export var target_tilemap_layer: int = 0  # Set this to the layer you want to detect
 @export var player_path: NodePath  # Drag your player node here in the inspector
 
-@onready var tilemap: TileMap = $"./"
-@onready var player: CharacterBody2D = $"../../Player"
+var player: CharacterBody2D
+var tilemap: TileMap
 
 func _ready():
 	# Get the tilemap (assuming this script is attached to the tilemap or a child of it)
+	tilemap = get_parent() as TileMap
 	if not tilemap:
 		push_error("This script should be attached to a TileMap or its child")
 		return
 	
 	# Get the player
+	player = get_node(player_path) as CharacterBody2D
 	if not player:
 		push_error("Player node not found")
 		return

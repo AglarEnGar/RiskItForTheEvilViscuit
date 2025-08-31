@@ -7,6 +7,7 @@ var death_screen: Control
 
 func _on_crouch_expire():
 	print("death")
+	Globals.rest_crouch_timer()
 	kill_player()
 
 func _ready():

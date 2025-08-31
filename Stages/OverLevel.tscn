@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=4 uid="uid://dcp7ixl7x15yv"]
+[gd_scene load_steps=8 format=4 uid="uid://dcp7ixl7x15yv"]
 
-[ext_resource type="Script" uid="uid://li7dm6dwuptd" path="res://Stages/bluh.gd" id="1_1r87x"]
 [ext_resource type="TileSet" uid="uid://dqa6vteyjcx2n" path="res://Objects/Floors.tres" id="1_w0gmo"]
 [ext_resource type="Shader" uid="uid://bns0n7kj8hidm" path="res://Stages/bluh.gdshader" id="2_6lo3p"]
 [ext_resource type="TileSet" uid="uid://f1t31xnexiuk" path="res://Objects/Walls.tres" id="2_nfok1"]
@@ -11,6 +10,9 @@
 shader = ExtResource("2_6lo3p")
 
 [sub_resource type="FontFile" id="FontFile_w0gmo"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -18,7 +20,6 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [node name="OverLevel" type="Node2D"]
-script = ExtResource("1_1r87x")
 
 [node name="FloorTiles" type="TileMapLayer" parent="."]
 z_index = -10
@@ -86,7 +87,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Biscuit" parent="." instance=ExtResource("4_shwjo")]
-position = Vector2(15132, 726)
+position = Vector2(15166, 278)
 
 [node name="Biscuit2" parent="." instance=ExtResource("4_shwjo")]
 position = Vector2(9545, -88)

@@ -26,7 +26,7 @@ func _process(delta):
 	#rotation += spin_speed * delta
 
 func _on_body_entered(body):
-	print("entered")
+	#print("entered")
 	# Check if the entering body is the player
 	if body.is_in_group("player"):
 		# Call the player's collect method if it exists
