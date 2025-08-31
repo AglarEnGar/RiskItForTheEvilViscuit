@@ -11,20 +11,24 @@ config_version=5
 [application]
 
 config/name="New Project"
-run/main_scene="uid://bb1mqf85aqcjq"
+run/main_scene="uid://dcp7ixl7x15yv"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-AssDimension="*res://Stages/ass_dimension.gd"
 CatTest="*res://Character/CatTest.tscn"
-EvilDimension="*res://Stages/EvilDimension.tscn"
 
 [display]
 
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/scale=1.95
+
+[global_group]
+
+player=""
+biscuit=""
 
 [input]
 

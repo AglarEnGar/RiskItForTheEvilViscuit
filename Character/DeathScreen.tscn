@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://chsud26nkl3r3"]
+
+[ext_resource type="Script" uid="uid://xhfr2olou1ui" path="res://Character/DeathManager.gd" id="1_qolp5"]
+[ext_resource type="FontFile" uid="uid://b8q8knu6m235k" path="res://Font/BigBlueTerm437NerdFontPropo-Regular.ttf" id="2_eyxw6"]
+[ext_resource type="FontFile" uid="uid://cibtdme0gvmww" path="res://Font/BigBlueTerm437NerdFont-Regular.ttf" id="2_nymok"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nymok"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.439216)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 13
+
+[node name="ToolTip" type="PanelContainer"]
+process_mode = 3
+z_index = 11
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -49.0
+offset_right = -81.0
+offset_bottom = 47.86
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.54429, 3.18432)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nymok")
+script = ExtResource("1_qolp5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.884314, 3.34509e-06, 3.85046e-07, 1)
+theme_override_fonts/normal_font = ExtResource("2_nymok")
+theme_override_fonts/mono_font = ExtResource("2_eyxw6")
+theme_override_font_sizes/mono_font_size = 6
+text = "You Died"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="RichTextLabel"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 87.0
+offset_bottom = 69.0
+scale = Vector2(0.84, 0.84)
+theme_override_fonts/font = ExtResource("2_nymok")
+text = "Respawn
+"
+
+[connection signal="button_down" from="RichTextLabel/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="RichTextLabel/Button" to="." method="_on_button_pressed"]
