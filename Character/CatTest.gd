@@ -2,32 +2,23 @@ extends CharacterBody2D
 @export var move_speed :float = 0
 @export var ttd :float = 0
 
-@export var startng_direction : Vector2 = Vector2(0, 1)
+signal crouch_start
+signal crouch_end
+
+@export var start_dir : Vector2 = Vector2(0, 1)
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
-#@onready var button: Button = $"./CanvasLayer/Button"
-@onready var colorRect: ColorRect = $"./CanvasLayer/ColorRect"
-@onready var crouchTime: Timer = $"./CrouchingTime"
-@onready var deaths: PanelContainer = $"./ToolTip"
+
 var initial_position: Vector2
 
-var toggle = 0
+var is_crouching: bool = false
 
 func _ready():
-	update_animation_parameters(startng_direction)
-	crouchTime.timeout.connect(_on_timer_timeout)
-	crouchTime.start(ttd)
-	crouchTime.paused = true
-	initial_position = Vector2(15170.5, 257.996)
-	global_position = Vector2(15100.5, 257.996)
-	
+	update_animation_parameters(start_dir)
 	
 func _on_timer_timeout():
-	print("Char dies")
-	colorRect.visible = false
-	
-	deaths.kill_player()
+	print("you died")
 
 func _physics_process(_delta):
 	var input_direction = Vector2(
@@ -39,31 +30,17 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	pick_new_state()
-	
-	if toggle == 1:
-		var next_sc = "res://Stages/UnderLevel.tscn"
-		get_tree().change_scene_to_file(next_sc)
-		#button.text = "Leave the ass dimension"
-		colorRect.visible = true # Replace with function body.
-		crouchTime.paused = false
-		var fstring = "Crouching: %d" % crouchTime.time_left
-		print(fstring)
-		
-	else:
-		var next_sc = "res://Stages/OverLevel.tscn"
-		get_tree().change_scene_to_file(next_sc)
-		#button.text = "Enter the ass dimension"
-		colorRect.visible = false # Replace with function body.
-		crouchTime.paused = true
-		var fstring = "Not Crouching: %d" % crouchTime.time_left
-		print(fstring)
-	
-	
-func _input(ev):
-	if Input.is_key_pressed(KEY_C):
-		toggle = 1
-	elif (toggle == 1):
-		toggle = 0
+
+
+func _input(_ev):
+	if Input.is_action_just_released("crouch"):
+		if is_crouching:
+			Globals.pause_crouch_timer()
+			crouch_end.emit()
+		else:
+			Globals.start_crouch_timer()
+			crouch_start.emit()
+		is_crouching = not is_crouching
 		
 
 func update_animation_parameters(move_input : Vector2):

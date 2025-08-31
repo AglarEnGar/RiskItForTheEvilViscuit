@@ -1,5 +1,5 @@
 extends PanelContainer
-@onready var timer = $"../../PopupGoaway"
+@onready var timer = $Timer
 
 func _ready() :
 	show()

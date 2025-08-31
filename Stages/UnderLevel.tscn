@@ -5,13 +5,16 @@
 [ext_resource type="FontFile" uid="uid://cibtdme0gvmww" path="res://Font/BigBlueTerm437NerdFont-Regular.ttf" id="3_qhk1n"]
 
 [sub_resource type="FontFile" id="FontFile_oo3oj"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
-[node name="OverLevel" type="Node2D"]
+[node name="UnderLevel" type="Node2D"]
 
 [node name="FloorTiles" type="TileMapLayer" parent="."]
 z_index = -10

@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8xfknyj7epl1"]
+
+[ext_resource type="PackedScene" uid="uid://dcp7ixl7x15yv" path="res://Stages/OverLevel.tscn" id="1_vj81k"]
+[ext_resource type="Script" uid="uid://b13y4k0fll87u" path="res://Stages/level.gd" id="1_vv06l"]
+[ext_resource type="PackedScene" uid="uid://dhb3givuyxlkt" path="res://Stages/UnderLevel.tscn" id="2_g6vsb"]
+[ext_resource type="Material" uid="uid://d0gi8q5fb3k5j" path="res://Shaderz/Ass_Dimension.tres" id="3_c2mo2"]
+[ext_resource type="Script" uid="uid://c4yxu46ljg8nq" path="res://Stages/overlays.gd" id="4_4uke2"]
+[ext_resource type="Script" uid="uid://c0dsyrtdshbte" path="res://Character/tool_tip.gd" id="4_88vj8"]
+[ext_resource type="FontFile" uid="uid://cibtdme0gvmww" path="res://Font/BigBlueTerm437NerdFont-Regular.ttf" id="5_vv06l"]
+[ext_resource type="PackedScene" uid="uid://chsud26nkl3r3" path="res://Character/DeathScreen.tscn" id="6_88vj8"]
+[ext_resource type="PackedScene" uid="uid://be6gfumwn02ds" path="res://Character/CatTest.tscn" id="9_su2vq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cxm2"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 0.439216)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 13
+
+[node name="Root" type="Node2D"]
+
+[node name="Level" type="Node" parent="."]
+script = ExtResource("1_vv06l")
+
+[node name="OverLevel" parent="Level" instance=ExtResource("1_vj81k")]
+
+[node name="UnderLevel" parent="Level" instance=ExtResource("2_g6vsb")]
+
+[node name="Overlays" type="CanvasLayer" parent="."]
+visible = false
+follow_viewport_scale = 11.655
+script = ExtResource("4_4uke2")
+
+[node name="TimeLeft" type="RichTextLabel" parent="Overlays"]
+offset_left = 138.0
+offset_top = 5.0
+offset_right = 455.0
+offset_bottom = 45.0
+text = "Time Till Dimensional Collapse: 100"
+horizontal_alignment = 1
+
+[node name="AssDimensionShader" type="ColorRect" parent="Overlays"]
+material = ExtResource("3_c2mo2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CrouchTutorial" type="PanelContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.358
+offset_top = 28.88
+offset_right = 90.3571
+offset_bottom = 119.88
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cxm2")
+script = ExtResource("4_88vj8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/CrouchTutorial"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("5_vv06l")
+text = "Press SPACE to toggle *crouch*
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="UI/CrouchTutorial"]
+
+[node name="Death" parent="UI" instance=ExtResource("6_88vj8")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="." instance=ExtResource("9_su2vq")]
+
+[connection signal="crouch_end" from="Player" to="Level" method="_on_player_crouch_end"]
+[connection signal="crouch_end" from="Player" to="Overlays" method="_on_player_crouch_end"]
+[connection signal="crouch_start" from="Player" to="Level" method="_on_player_crouch_start"]
+[connection signal="crouch_start" from="Player" to="Overlays" method="_on_player_crouch_start"]

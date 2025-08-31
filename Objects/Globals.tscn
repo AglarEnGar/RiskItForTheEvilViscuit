@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0l6qj0xk4ijv"]
+
+[ext_resource type="Script" uid="uid://clcysg6buvevc" path="res://Objects/global_state.gd" id="1_2mc5y"]
+
+[node name="Globals" type="Node"]
+script = ExtResource("1_2mc5y")
+
+[node name="CrouchTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CrouchTimer" to="." method="_on_crouch_timer_timeout"]
