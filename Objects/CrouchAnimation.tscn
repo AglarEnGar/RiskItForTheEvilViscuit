@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7bnj2om874d8"]
+
+[ext_resource type="VideoStream" uid="uid://dyk2pqmcgug6m" path="res://Art/crouch_anim.ogv" id="1_y8q6g"]
+
+[node name="CrouchAnimation" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_y8q6g")
+autoplay = true

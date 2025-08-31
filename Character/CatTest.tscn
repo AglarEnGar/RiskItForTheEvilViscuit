@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://de5a1s2wu7t8s" path="res://Art/Characters/Basic Charakter Spritesheet.png" id="1_2s457"]
 [ext_resource type="Script" uid="uid://bwjpwqj1m6cdu" path="res://Character/CatTest.gd" id="1_qeyfw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5hof"]
-size = Vector2(9.44032, 9.33333)
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7t1ae"]
 animation = &"idlefront"
 
@@ -223,6 +220,9 @@ _data = {
 &"walkright": SubResource("Animation_ogkmm")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5hof"]
+size = Vector2(9.44032, 9.33333)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_qeyfw")
 move_speed = 1000.0
@@ -234,12 +234,6 @@ scale = Vector2(3.883, 3.62)
 texture = ExtResource("1_2s457")
 hframes = 4
 vframes = 4
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 8)
-scale = Vector2(3.883, 3.62)
-shape = SubResource("RectangleShape2D_q5hof")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_56iki")
@@ -258,3 +252,8 @@ zoom = Vector2(0.475, 0.475)
 [node name="PopupGoaway" type="Timer" parent="."]
 
 [node name="CrouchingTime" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 8)
+scale = Vector2(3.883, 3.62)
+shape = SubResource("RectangleShape2D_q5hof")

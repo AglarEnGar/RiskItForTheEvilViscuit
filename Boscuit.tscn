@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtl3vums45b3"]
+
+[ext_resource type="Script" uid="uid://dg252wjgm4ov7" path="res://Objects/biscuit.gd" id="1_wid2t"]
+[ext_resource type="Texture2D" uid="uid://2u246fncs805" path="res://Art/Objects/Screenshot_2025-08-30_16-30-31.png" id="2_esdc8"]
+[ext_resource type="Shader" uid="uid://dmfxi8m6rue2i" path="res://Shaderz/biscuit.gdshader" id="2_m2syl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ug76"]
+shader = ExtResource("2_m2syl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r87x"]
+size = Vector2(516.667, 277)
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.349606, 0.842062)
+script = ExtResource("1_wid2t")
+
+[node name="Biscuit" type="Sprite2D" parent="." groups=["biscuit"]]
+material = SubResource("ShaderMaterial_8ug76")
+texture = ExtResource("2_esdc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.4444, 6.5)
+shape = SubResource("RectangleShape2D_1r87x")

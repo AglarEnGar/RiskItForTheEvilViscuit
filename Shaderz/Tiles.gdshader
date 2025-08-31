@@ -12,13 +12,13 @@ uniform sampler2D spec;
 void fragment() {
 	// Called for every pixel the material is visible on.
 	vec4 normal = texture(normals, UV);
-	
+
 	vec3 light = normalize(vec3(sin(TIME), -1.0, cos(TIME)));
 	vec4 diffuse = texture(TEXTURE, UV);
 	vec4 diff2 = diffuse * dot(normal.xyz, light);
-	
+
 	// quantize the diffuse a bit
-	
+
 	COLOR = vec4(textureLod(TEXTURE, UV, 0.0).xyz * dot(normal.xyz, light), 1.0 * normal.w);
 }
 

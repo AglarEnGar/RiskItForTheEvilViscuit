@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8xfknyj7epl1"]
+[gd_scene load_steps=12 format=3 uid="uid://b8xfknyj7epl1"]
 
 [ext_resource type="PackedScene" uid="uid://dcp7ixl7x15yv" path="res://Stages/OverLevel.tscn" id="1_vj81k"]
 [ext_resource type="Script" uid="uid://b13y4k0fll87u" path="res://Stages/level.gd" id="1_vv06l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c0dsyrtdshbte" path="res://Character/tool_tip.gd" id="4_88vj8"]
 [ext_resource type="FontFile" uid="uid://cibtdme0gvmww" path="res://Font/BigBlueTerm437NerdFont-Regular.ttf" id="5_vv06l"]
 [ext_resource type="PackedScene" uid="uid://chsud26nkl3r3" path="res://Character/DeathScreen.tscn" id="6_88vj8"]
+[ext_resource type="Script" uid="uid://co6jckmrpxe23" path="res://Stages/biscut_Counter.gd" id="6_su2vq"]
 [ext_resource type="PackedScene" uid="uid://be6gfumwn02ds" path="res://Character/CatTest.tscn" id="9_su2vq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cxm2"]
@@ -58,6 +59,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Biscuits: 0"
+script = ExtResource("6_su2vq")
 
 [node name="CrouchTutorial" type="PanelContainer" parent="UI"]
 anchors_preset = 5

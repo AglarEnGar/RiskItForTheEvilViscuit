@@ -4,9 +4,12 @@ extends Area2D
 @export var item_name = "Biscuit"
 @export var value = 1
 
+
+
 func _ready():
-	# Connect the area_entered signal
+	# Connect the area_entered sigal
 	body_entered.connect(_on_body_entered)
+	
 	
 # Add to your collectible script
 @export var spin_speed = 2.0
@@ -20,7 +23,7 @@ func _process(delta):
 	# Create a bouncing animation
 	position.y = sin(time * bounce_speed) * bounce_height
 	# Create a spinning animation
-	rotation += spin_speed * delta
+	#rotation += spin_speed * delta
 
 func _on_body_entered(body):
 	print("entered")
@@ -36,6 +39,7 @@ func _on_body_entered(body):
 func collect():
 	# Add any collection effects here (particles, sound, etc.)
 	print("Collected: ", item_name)
-	
+	Globals.biscuits += 1
+
 	# Remove the collectible from the scene
 	queue_free()
