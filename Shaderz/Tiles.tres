@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d0pr8fj106jl0"]
+
+[ext_resource type="Shader" uid="uid://giq3d8durvut" path="res://Shaderz/Tiles.gdshader" id="1_l0i0x"]
+[ext_resource type="Texture2D" uid="uid://coiveqlqfysse" path="res://Art/Tilesets/FloorTiles_Normals.png" id="2_g5fmt"]
+
+[resource]
+shader = ExtResource("1_l0i0x")
+shader_parameter/light_dir = Vector3(0.5, 0.7, 0.2)
+shader_parameter/normals = ExtResource("2_g5fmt")
