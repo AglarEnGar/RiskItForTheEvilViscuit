@@ -1,6 +1,3 @@
-# The new game where you can dodge obptakel!!
+# Game Jam Repository for the game "Risk it for the Evil Viscuit"
 
-
-NYT best award winnner of all time!
-uih Hi so there is dwarf man with magic ass gifted by bunny, go into space and fight will smith smurf., beat bowser and win
-win 5 dolar venmo
+Features a top down maze solving game, with features of level changing rather than new levels.
